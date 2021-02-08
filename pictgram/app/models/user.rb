@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :password, presence: true,                                  
   length:{ minimum: 8, maximum: 32},format:{with:VALID_PASSWORD_REGEX}  #passwordの長さは8～32かつアルファベットと数字の混合
   
-  
-
+    has_many :topics
   
 end
