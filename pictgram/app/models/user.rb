@@ -12,5 +12,7 @@ class User < ApplicationRecord
   length:{ minimum: 8, maximum: 32},format:{with:VALID_PASSWORD_REGEX}  #passwordの長さは8～32かつアルファベットと数字の混合
   
     has_many :topics
-  
+    has_many :favorites
+    has_many :favorite_topics, through: :favorites, source:
+  'topic'
 end
